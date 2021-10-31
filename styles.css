@@ -6,20 +6,27 @@ header{
     text-align: center;
 }
 body{
-    text-align: center;
+    text-align: left;
 }
 section{
     text-align: left;
 }
-div{
+div #s{
     display: flex;
-    padding: 20px;
-    justify-content: center;
-    gap: 10px;
+    justify-content: left;
+    padding-top: 10px;
+    margin: 10px;
     
 }
-input{
-     padding: 8px;
+#searchtext{
+    line-height: 0%;
+    padding: 5px;  
+    margin: 5px; 
+    width: 70%;
 }
-
+#search{
+    padding: 5px;  
+    margin: 1px;
+}
+ 
  

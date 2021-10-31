@@ -11,7 +11,7 @@ window. onload= function(){
         theRequest. onreadystatechange = function(){
             if (theRequest.status==200){
                 var heroes = theRequest.responseText;
-                if(search.value != ""){
+                if(search.value = " "){
                     console.log(search.value)
                     result.innerHTML = heroes
                 }else{
@@ -22,7 +22,7 @@ window. onload= function(){
 
             }
         }    
-        theRequest.open ("GET", "http://localhost/info2180-lab4/superheroes.php?q="+search.value,true);
+        theRequest.open ("GET", "http://localhost/info2180-lab4/superheroes.php?q="+search.value);
         theRequest.send();        
             
     })

@@ -1,0 +1,24 @@
+header{
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+}
+body{
+    text-align: center;
+}
+section{
+    text-align: left;
+}
+div{
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    gap: 10px;
+    
+}
+input{
+     padding: 8px;
+}
+ 

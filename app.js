@@ -1,20 +1,29 @@
 window. onload= function(){
-    let theRequest= new XMLHttpRequest () ;
+    let theRequest= new  XMLHttpRequest();
     let superherofile = "http://localhost/info2180-lab4/superheroes.php"
     const load= document.querySelector("#search")
-
-    load.addEventListener("click", function (e){
-        theRequest.open ("GET", superherofile) ;
-        theRequest.send();   
+    let search = document.querySelector("input");
+    let result = document.querySelector(".message");
+    
+         
+    load.addEventListener("click", function (e){        
         e.preventDefault();
         theRequest. onreadystatechange = function(){
             if (theRequest.status==200){
-                var response = theRequest.response;
-                alert(response);
-            }else{
-            alert("Cant process request.")
+                var heroes = theRequest.responseText;
+                if(search.value != ""){
+                    console.log("12")
+                    result.innerHTML = heroes
+                }else{
+                    console.log("Search")
+                    var heroes = theRequest.responseText;
+                    result.innerHTML = this.responseText;
+                }
+
             }
-        }         
-            
+        }            
+        theRequest.open ("GET", "http://localhost/info2180-lab4/superheroes.php?q="+search.value);
+        theRequest.send();        
     })
+    
 }

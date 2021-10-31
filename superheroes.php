@@ -62,17 +62,27 @@ $superheroes = [
       "biography" => "Notably powerful, Wanda Maximoff has fought both against and with the Avengers, attempting to hone her abilities and do what she believes is right to help the world.",
   ], 
 ];
-$q = $_REQUEST["q"];
 
 ?>
-
+ 
 <ul>
-<?php if($q == "")?>
+<?php 
+$q=$_REQUEST['q'];
+if($q !== ""):?>
+<?php foreach ($superheroes as $superhero): ?>
+   <li><?= $q; ?></li>
+  <li><?= $superhero['name']; ?></li>
+  <?= $superhero['alias']; ?><br/>
+  <?= $superhero['biography']; ?>
+<?php endforeach; ?>
+<?php endif; ?>
+</ul>
+<ul>
+<?php 
+$q=$_REQUEST['q'];
+if($q == ""):?>
 <?php foreach ($superheroes as $superhero): ?>
   <li><?= $superhero['alias']; ?></li>
 <?php endforeach; ?>
+<?php endif; ?>
 </ul>
-
- 
-
- 

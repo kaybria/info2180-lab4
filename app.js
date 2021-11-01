@@ -3,7 +3,7 @@ window. onload= function(){
     let superherofile = "http://localhost/info2180-lab4/superheroes.php"
     const load= document.querySelector("#search")
     let search = document.querySelector("input");
-    let result = document.querySelector(".message");
+    let result = document.querySelector("#result");
     
          
     load.addEventListener("click", function (e){        

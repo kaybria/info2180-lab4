@@ -73,11 +73,10 @@ $notfound = "<div style='color:red;'>"."SUPERHERO NOT FOUND"."</div>" ;
 if($q !== ""):?>
     <?php foreach ($superheroes as $superhero): ?>
         <?php if(($q == $superhero['name']) || ($q == $superhero['alias'])):?>      
-            <b><?= strtoupper($superhero['name']); ?></b><br/>
-            <b><?= "A.K.A " , $superhero['alias']; ?></b><br/>
+            <h4 style = " line-height: 0"><?= strtoupper($superhero['name']); ?></h4>
+            <h3 style = " line-height: 0"><?= "A.K.A " , $superhero['alias']; ?></h3>  <br>
             <?php $found = 1 ?>
-            <br>
-            <?= $superhero['biography']; ?>
+            <p><?= $superhero['biography']; ?></p>
         <?php endif; ?>
     <?php endforeach;?> 
     <?php if($found !== 1):?>

@@ -4,6 +4,9 @@ window. onload= function(){
     const load= document.querySelector("#search")
     let search = document.querySelector("input");
     let result = document.querySelector("#result");
+    let input = search.value;
+    input = input.replace(/[^a-z0-9áéíóúñü \.,_-]/gim, "");
+    let cleaninput = input.trim();
     
          
     load.addEventListener("click", function (e){        
@@ -11,8 +14,8 @@ window. onload= function(){
         theRequest. onreadystatechange = function(){
             if (theRequest.status==200){
                 var heroes = theRequest.responseText;
-                if(search.value = " "){
-                    console.log(search.value)
+                if(cleaninput != ""){
+                    console.log(cleaninput)
                     result.innerHTML = heroes
                 }else{
                     console.log("Search")
@@ -22,7 +25,7 @@ window. onload= function(){
 
             }
         }    
-        theRequest.open ("GET", "http://localhost/info2180-lab4/superheroes.php?q="+search.value);
+        theRequest.open ("GET", "http://localhost/info2180-lab4/superheroes.php?q="+cleaninput);
         theRequest.send();        
             
     })

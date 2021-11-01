@@ -27,6 +27,14 @@ div #s{
 #search{
     padding: 5px;  
     margin: 1px;
+    background-color: red;
+    color: azure;
+}
+#search:hover{
+   background-color: aqua;
+}
+p{
+    padding-bottom: 0px;
 }
  
  
